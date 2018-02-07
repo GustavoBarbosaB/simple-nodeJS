@@ -1,9 +1,6 @@
-var express = require('express');
-var app = express();
+var app = require(`./config/express`)();
 
-app.get('/produtos',function(request,response){
-  response.send("Seu JSON esta aqui!");
-});
+var rotasProdutos = require(`./app/routes/produtos`)(app);
 
 app.listen(8080,function(){
   console.log("Servidor funcionando!");
