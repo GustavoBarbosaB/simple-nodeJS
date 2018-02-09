@@ -11,8 +11,9 @@ module.exports = function(app){
     connection.end();
   });
 
-  app.post(`/`,function(request,response){
+  app.post(`/message`,function(request,response){
      var post = request.body;
+     io.emit(`newMessage`,post);
      response.send(post);
   });
 }
