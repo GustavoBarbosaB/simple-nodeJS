@@ -1,5 +1,5 @@
 module.exports = function(app){
-  app.get('/',function(request,response){
+  app.get(`/`,function(request,response){
 
     var connection = app.infra.connectionFactory();
     var produtosDao = new app.infra.LivrosDAO(connection);
